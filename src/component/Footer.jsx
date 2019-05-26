@@ -8,7 +8,7 @@ class Footer extends React.PureComponent {
     } = this.props;
     return (
       <div>
-        <h1> Footer </h1>
+        <h1> Footer1 </h1>
         {coun}
         {<button type="button" onClick={setDecrement}> Decrement </button>}
       </div>
