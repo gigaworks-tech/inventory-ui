@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Route, Switch, withRouter,
 } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 import MainPage from '../container/MainPage';
 // import SignIn from '../component/SignIn';
@@ -36,7 +37,7 @@ class App extends React.PureComponent {
     const { isAuthenticated } = this.state;
     return (
       <Switch>
-        <Route exact path="/" component={SignInContainer} />
+        <Route exact path="/" render={props => <SignInContainer login={this.handleLogIn} {...props} />} />
         <Route path="/login" render={props => <SignInContainer login={this.handleLogIn} {...props} />} />
         <Route path="/signup" component={SignUpContainer} />
         <PrivateRoute authenticated={isAuthenticated} path="/mainpage" component={MainPage} signOut={this.handleSignOut} />
