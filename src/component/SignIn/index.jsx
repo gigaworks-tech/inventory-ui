@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function SignIn({ handleClick, temp }) {
+function SignIn({ login, temp }) {
   const classes = useStyles();
 
   return (
@@ -79,7 +79,7 @@ function SignIn({ handleClick, temp }) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={e => handleClick(e)}
+            onClick={e => login(e)}
           >
             Sign In
           </Button>
@@ -90,7 +90,7 @@ function SignIn({ handleClick, temp }) {
 }
 
 SignIn.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired,
   temp: PropTypes.number.isRequired,
 };
 

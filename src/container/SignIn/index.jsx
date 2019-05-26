@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SignIn from '../../component/SignIn';
 
 class SignInContainer extends React.PureComponent {
@@ -19,13 +20,19 @@ class SignInContainer extends React.PureComponent {
 
   render() {
     const { a } = this.state;
+    const { login } = this.props;
     return (
       <SignIn
-        handleClick={this.handleClick}
+        login={login}
         temp={a}
       />
     );
   }
 }
+
+SignInContainer.propTypes = {
+  login: PropTypes.func.isRequired,
+};
+
 
 export default SignInContainer;
