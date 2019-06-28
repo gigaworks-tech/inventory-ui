@@ -1,0 +1,18 @@
+#headerParentDiv {
+    background-color: #00B4D2;
+    height: 70px;
+    display: block;
+    overflow: hidden;
+  }
+  
+  #headerParentDiv #searchDiv {
+    float: right;
+  }
+  
+  #profineNameStyle {
+    margin-left: 16px;
+    float: right;
+    line-height: 70px;
+    color: white;
+  }
+  

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SignIn from '../../component/SignIn';
+import { getLookup } from '../../express/signIn';
 
 class SignInContainer extends React.PureComponent {
   constructor(props) {
@@ -9,6 +10,23 @@ class SignInContainer extends React.PureComponent {
       a: 1,
     };
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    getLookup();
+    // fetch('http://localhost:8770/lookup')
+    //   .then(res => res.json())
+    //   .then(
+    //     (result) => {
+    //       console.log(result);
+    //     },
+    //     // Note: it's important to handle errors here
+    //     // instead of a catch() block so that we don't swallow
+    //     // exceptions from actual bugs in components.
+    //     (error) => {
+    //       console.log(error);
+    //     },
+    //   );
   }
 
   handleClick() {

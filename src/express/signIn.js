@@ -36,3 +36,23 @@ export function signup(signupRequest) {
     body: JSON.stringify(signupRequest),
   });
 }
+
+export function getLookup() {
+  const headers = new Headers({
+    'Content-Type': 'application/json',
+  });
+  const options = {
+    url: `${API_BASE_URL}/lookup`,
+    method: 'GET',
+  };
+  const defaults = { headers };
+  const optionsHeader = Object.assign({}, defaults, options);
+
+  return fetch(optionsHeader.url, options)
+    .then(response => response.json().then((json) => {
+      if (!response.ok) {
+        return Promise.reject(json);
+      }
+      return json;
+    }));
+}

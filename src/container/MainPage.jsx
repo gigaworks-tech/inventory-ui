@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../component/Header';
 import Footer from '../component/Footer';
-
+// import DashboardTable from '../component/common/DashboardTable';
 import { increment, decrement } from '../action/counter';
+import HeaderContainer from './HomeContainer';
+import TextFields from './Form';
 
 class MainPage extends React.PureComponent {
   render() {
@@ -14,6 +16,8 @@ class MainPage extends React.PureComponent {
     return (
 
       <div>
+        <HeaderContainer />
+        <TextFields />
         <Header coun={coun} setIncrement={() => setIncrement()} />
         <Footer coun={coun} setDecrement={() => setDecrement()} />
       </div>
